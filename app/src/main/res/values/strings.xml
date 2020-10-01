@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Tutorials</string>
+    <string name="continue_button">Continue</string>
+    <string name="complete_screen_title">Complete</string>
+    <string name="welcome_text">Welcome, Adam!</string>
+    <string name="thanks_message">Thanks for creating a profile and learning about your radio</string>
+    <string name="exit_button_text">Exit Tutorial</string>
+    <string name="find_again_text">Find again in Apps</string>
+    <string name="screen_description">Learn about your radio</string>
+    <string name="video1_title">Home: Add Widgets | 0:08</string>
+    <string name="video2_title">Status Bar: Customize | 0:10</string>
+    <string name="video3_title">Media: Save Sources | 0:07</string>
+    <string name="video4_title">Media: Save Stations | 0:04</string>
+    <string name="video_title_default">Tutorials</string>
+    <string name="apps_image_description">All apps image</string>
+    <string name="video1_caption_0sTo3s">Customize your homescreen widgets</string>
+    <string name="video1_caption_3sTo6s">Select your widget</string>
+    <string name="video1_caption_8sTo10s">Change widgets by pressing edit icon</string>
+    <string name="video2_caption_0sTo5s">Swipe down on status bar to customize</string>
+    <string name="video2_caption_5sTo8s">Choose from a variety of shortcuts</string>
+    <string name="video2_caption_8sTo19s">Drag and drop into Status Bar</string>
+    <string name="video3_caption_0sTo8s">Press and hold to save stations</string>
+    <string name="video3_caption_8sTo15s">Presets can be a mix of AM and FM</string>
+    <string name="video4_caption_0sTo3s">Press and hold source to drag</string>
+    <string name="video4_caption_3sTo6s">Drag to the left</string>
+</resources>
