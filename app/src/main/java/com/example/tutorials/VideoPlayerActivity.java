@@ -13,6 +13,8 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.VideoView;
 
+import com.example.t8801cb.tutorials.R;
+
 public class VideoPlayerActivity extends AppCompatActivity
 {
 

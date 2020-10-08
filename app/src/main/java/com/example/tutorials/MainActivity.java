@@ -19,19 +19,14 @@ import android.widget.MediaController;
 import android.widget.TextView;
 import android.widget.VideoView;
 
-import com.fca.uconnect.loader.ILoader;
-import com.fca.uconnect.loader.ManagerLoader;
-import com.fca.uconnect.PropertyNotSupported;
-import com.fca.uconnect.managers.IVehicleHVACManager;
-import com.fca.uconnect.managers.IVehicleStatusManager;
+import com.example.t8801cb.tutorials.R;
 
 import java.util.Locale;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class MainActivity extends AppCompatActivity implements ILoader.ILoaderCallback, IVehicleStatusManager.FcaIVehicleStatusManagerCallback {
+public class MainActivity extends AppCompatActivity {
 
-    private IVehicleStatusManager mVehicleStatusManager = null;
     private ImageView playImage;
     private String thisClass = this.getClass().getName();
     public static boolean speedLockoutPopupIsEnabled = false;
@@ -41,19 +36,6 @@ public class MainActivity extends AppCompatActivity implements ILoader.ILoaderCa
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        final ManagerLoader managerLoader = new ManagerLoader();
-        managerLoader.getManager(IVehicleStatusManager.class.getName(), this, getApplicationContext());
-
-        final ExecutorService executor = Executors.newSingleThreadExecutor();
-        executor.submit(() -> {
-            try {
-                System.out.println(this.mVehicleStatusManager.getBattery());
-
-            } catch (final PropertyNotSupported e) {
-                System.out.println("Property not supported");
-            }
-        });
 
         Log.i(thisClass, "started main activity");
 

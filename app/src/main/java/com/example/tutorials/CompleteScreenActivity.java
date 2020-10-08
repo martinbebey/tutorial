@@ -10,6 +10,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.example.t8801cb.tutorials.R;
+
 import java.io.FileInputStream;
 import java.io.InputStream;
 
