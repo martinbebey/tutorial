@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.t8801cb.tutorials">
+    package="com.example.tutorials">
 
     <uses-permission android:name="com.fca.Uconnect.CommonApp.permission.FCA_PERMISSION_EV_READ_HIGH" />
     <uses-permission android:name="com.fca.Uconnect.CommonApp.permission.FCA_PERMISSION_EV_WRITE_HIGH" />
@@ -56,7 +56,7 @@
 
         <uses-library
             android:name="fca.loader"
-            android:required="true" />
+            android:required="false" />
         <activity android:name=".CompleteScreenActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -64,10 +64,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
-            android:name=".SpeedLockoutPopUp"
-            android:theme="@style/AppTheme.CustomTheme">
         </activity>
     </application>
 

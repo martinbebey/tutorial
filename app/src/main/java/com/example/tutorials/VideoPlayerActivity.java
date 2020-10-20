@@ -13,15 +13,13 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.VideoView;
 
-import com.example.t8801cb.tutorials.R;
+
 
 public class VideoPlayerActivity extends AppCompatActivity
 {
 
-    private TextView textView, captionView = findViewById(R.id.caption_box);;
-    private Intent intent;
+    private TextView captionView = findViewById(R.id.caption_box);;
     private String videoTitle = "video", thisClass = this.getClass().getName();
-    private int elapsedTime = 0;
     public static boolean video1IsComplete = false;
     public static boolean video2IsComplete = false;
     public static boolean video3IsComplete = false;
@@ -37,14 +35,15 @@ public class VideoPlayerActivity extends AppCompatActivity
         Log.i(thisClass, "started VideoPlayerActivity");
 
         //getting the title and video from previous page
-        intent = getIntent();
-        textView = (TextView) findViewById(R.id.video_title);
+        Intent intent = getIntent();
+        TextView textView = (TextView) findViewById(R.id.video_title);
         textView.setText(intent.getStringExtra("videoTitle"));
         videoTitle += intent.getStringExtra("videoNumber");
 
         Log.i(thisClass, "selected " + videoTitle);
 
         //video 1
+        int elapsedTime = 0;
         if (intent.getStringExtra("videoNumber") == "1")
         {
             //preparing the video

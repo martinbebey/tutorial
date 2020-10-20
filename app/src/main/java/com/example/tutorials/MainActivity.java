@@ -19,7 +19,7 @@ import android.widget.MediaController;
 import android.widget.TextView;
 import android.widget.VideoView;
 
-import com.example.t8801cb.tutorials.R;
+
 
 import java.util.Locale;
 import java.util.concurrent.ExecutorService;
@@ -52,9 +52,9 @@ public class MainActivity extends AppCompatActivity {
 
             // set the ImageView bounds to match the Drawable's dimensions
             playImage.setAdjustViewBounds(true);
-            playImage.setLayoutParams(new ViewGroup.LayoutParams(
-                    ViewGroup.LayoutParams.WRAP_CONTENT,
-                    ViewGroup.LayoutParams.WRAP_CONTENT));
+//            playImage.setLayoutParams(new ViewGroup.LayoutParams(
+//                    ViewGroup.LayoutParams.WRAP_CONTENT,
+//                    ViewGroup.LayoutParams.WRAP_CONTENT));
 
         playImage = findViewById(R.id.video2_play_image);
 
@@ -63,9 +63,9 @@ public class MainActivity extends AppCompatActivity {
 
         // set the ImageView bounds to match the Drawable's dimensions
         playImage.setAdjustViewBounds(true);
-        playImage.setLayoutParams(new ViewGroup.LayoutParams(
-                ViewGroup.LayoutParams.WRAP_CONTENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT));
+//        playImage.setLayoutParams(new ViewGroup.LayoutParams(
+//                ViewGroup.LayoutParams.WRAP_CONTENT,
+//                ViewGroup.LayoutParams.WRAP_CONTENT));
 
         playImage = findViewById(R.id.video3_play_image);
 
@@ -74,9 +74,9 @@ public class MainActivity extends AppCompatActivity {
 
         // set the ImageView bounds to match the Drawable's dimensions
         playImage.setAdjustViewBounds(true);
-        playImage.setLayoutParams(new ViewGroup.LayoutParams(
-                ViewGroup.LayoutParams.WRAP_CONTENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT));
+//        playImage.setLayoutParams(new ViewGroup.LayoutParams(
+//                ViewGroup.LayoutParams.WRAP_CONTENT,
+//                ViewGroup.LayoutParams.WRAP_CONTENT));
 
         playImage = findViewById(R.id.video4_play_image);
 
@@ -85,9 +85,9 @@ public class MainActivity extends AppCompatActivity {
 
         // set the ImageView bounds to match the Drawable's dimensions
         playImage.setAdjustViewBounds(true);
-        playImage.setLayoutParams(new ViewGroup.LayoutParams(
-                ViewGroup.LayoutParams.WRAP_CONTENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT));
+//        playImage.setLayoutParams(new ViewGroup.LayoutParams(
+//                ViewGroup.LayoutParams.WRAP_CONTENT,
+//                ViewGroup.LayoutParams.WRAP_CONTENT));
 
 
 //        //video 1
@@ -154,9 +154,9 @@ public class MainActivity extends AppCompatActivity {
 
                     // set the ImageView bounds to match the Drawable's dimensions
                     playImage.setAdjustViewBounds(true);
-                    playImage.setLayoutParams(new ViewGroup.LayoutParams(
-                            ViewGroup.LayoutParams.WRAP_CONTENT,
-                            ViewGroup.LayoutParams.WRAP_CONTENT));
+//                    playImage.setLayoutParams(new ViewGroup.LayoutParams(
+//                            ViewGroup.LayoutParams.WRAP_CONTENT,
+//                            ViewGroup.LayoutParams.WRAP_CONTENT));
                 }
 
                 else
@@ -166,9 +166,9 @@ public class MainActivity extends AppCompatActivity {
 
                     // set the ImageView bounds to match the Drawable's dimensions
                     playImage.setAdjustViewBounds(true);
-                    playImage.setLayoutParams(new ViewGroup.LayoutParams(
-                            ViewGroup.LayoutParams.WRAP_CONTENT,
-                            ViewGroup.LayoutParams.WRAP_CONTENT));
+//                    playImage.setLayoutParams(new ViewGroup.LayoutParams(
+//                            ViewGroup.LayoutParams.WRAP_CONTENT,
+//                            ViewGroup.LayoutParams.WRAP_CONTENT));
                 }
                 break;
 
@@ -186,9 +186,9 @@ public class MainActivity extends AppCompatActivity {
 
                     // set the ImageView bounds to match the Drawable's dimensions
                     playImage.setAdjustViewBounds(true);
-                    playImage.setLayoutParams(new ViewGroup.LayoutParams(
-                            ViewGroup.LayoutParams.WRAP_CONTENT,
-                            ViewGroup.LayoutParams.WRAP_CONTENT));
+//                    playImage.setLayoutParams(new ViewGroup.LayoutParams(
+//                            ViewGroup.LayoutParams.WRAP_CONTENT,
+//                            ViewGroup.LayoutParams.WRAP_CONTENT));
                 }
 
                 else
@@ -198,9 +198,9 @@ public class MainActivity extends AppCompatActivity {
 
                     // set the ImageView bounds to match the Drawable's dimensions
                     playImage.setAdjustViewBounds(true);
-                    playImage.setLayoutParams(new ViewGroup.LayoutParams(
-                            ViewGroup.LayoutParams.WRAP_CONTENT,
-                            ViewGroup.LayoutParams.WRAP_CONTENT));
+//                    playImage.setLayoutParams(new ViewGroup.LayoutParams(
+//                            ViewGroup.LayoutParams.WRAP_CONTENT,
+//                            ViewGroup.LayoutParams.WRAP_CONTENT));
                 }
                 break;
 
@@ -218,9 +218,9 @@ public class MainActivity extends AppCompatActivity {
 
                     // set the ImageView bounds to match the Drawable's dimensions
                     playImage.setAdjustViewBounds(true);
-                    playImage.setLayoutParams(new ViewGroup.LayoutParams(
-                            ViewGroup.LayoutParams.WRAP_CONTENT,
-                            ViewGroup.LayoutParams.WRAP_CONTENT));
+//                    playImage.setLayoutParams(new ViewGroup.LayoutParams(
+//                            ViewGroup.LayoutParams.WRAP_CONTENT,
+//                            ViewGroup.LayoutParams.WRAP_CONTENT));
                 }
 
                 else
@@ -230,9 +230,9 @@ public class MainActivity extends AppCompatActivity {
 
                     // set the ImageView bounds to match the Drawable's dimensions
                     playImage.setAdjustViewBounds(true);
-                    playImage.setLayoutParams(new ViewGroup.LayoutParams(
-                            ViewGroup.LayoutParams.WRAP_CONTENT,
-                            ViewGroup.LayoutParams.WRAP_CONTENT));
+//                    playImage.setLayoutParams(new ViewGroup.LayoutParams(
+//                            ViewGroup.LayoutParams.WRAP_CONTENT,
+//                            ViewGroup.LayoutParams.WRAP_CONTENT));
                 }
                 break;
 
@@ -250,9 +250,9 @@ public class MainActivity extends AppCompatActivity {
 
                     // set the ImageView bounds to match the Drawable's dimensions
                     playImage.setAdjustViewBounds(true);
-                    playImage.setLayoutParams(new ViewGroup.LayoutParams(
-                            ViewGroup.LayoutParams.WRAP_CONTENT,
-                            ViewGroup.LayoutParams.WRAP_CONTENT));
+//                    playImage.setLayoutParams(new ViewGroup.LayoutParams(
+//                            ViewGroup.LayoutParams.WRAP_CONTENT,
+//                            ViewGroup.LayoutParams.WRAP_CONTENT));
                 }
 
                 else
@@ -262,9 +262,9 @@ public class MainActivity extends AppCompatActivity {
 
                     // set the ImageView bounds to match the Drawable's dimensions
                     playImage.setAdjustViewBounds(true);
-                    playImage.setLayoutParams(new ViewGroup.LayoutParams(
-                            ViewGroup.LayoutParams.WRAP_CONTENT,
-                            ViewGroup.LayoutParams.WRAP_CONTENT));
+//                    playImage.setLayoutParams(new ViewGroup.LayoutParams(
+//                            ViewGroup.LayoutParams.WRAP_CONTENT,
+//                            ViewGroup.LayoutParams.WRAP_CONTENT));
                 }
                 break;
         }
@@ -314,10 +314,10 @@ public class MainActivity extends AppCompatActivity {
 
         startActivity(intent);
 
-        while(!VideoPlayerActivity.videoIsClosed)
-        {
-
-        }
+//        while(!VideoPlayerActivity.videoIsClosed)
+//        {
+//
+//        }
 
         Log.i(thisClass, "videoIsClosed value -> " + VideoPlayerActivity.videoIsClosed);
 
@@ -363,7 +363,7 @@ public class MainActivity extends AppCompatActivity {
         Locale myLocale = new Locale(Resources.getSystem().getConfiguration().locale.getLanguage());
 
         //set app locale
-        myLocale.setDefault(new Locale("en", "US"));
+        Locale.setDefault(new Locale("en", "US"));
         Resources res = getResources();
         DisplayMetrics dm = res.getDisplayMetrics();
         Configuration conf = res.getConfiguration();
