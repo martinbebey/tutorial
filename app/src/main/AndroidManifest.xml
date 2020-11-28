@@ -1,46 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.t8801cb.tutorials">
-
-    <uses-permission android:name="com.fca.Uconnect.CommonApp.permission.FCA_PERMISSION_EV_READ_HIGH" />
-    <uses-permission android:name="com.fca.Uconnect.CommonApp.permission.FCA_PERMISSION_EV_WRITE_HIGH" />
-    <uses-permission android:name="com.fca.Uconnect.CommonApp.permission.FCA_PERMISSION_IFcaBaseInterface_READ_HIGH" />
-    <uses-permission android:name="com.fca.Uconnect.CommonApp.permission.FCA_PERMISSION_SECURETIME_READ_LOW" />
-    <uses-permission android:name="com.fca.Uconnect.CommonApp.permission.FCA_PERMISSION_FRONTCAMERA_READ_LOW" />
-    <uses-permission android:name="com.fca.Uconnect.CommonApp.permission.FCA_PERMISSION_FRONTCAMERA_WRITE_HIGH" />
-    <uses-permission android:name="com.fca.Uconnect.CommonApp.permission.FCA_PERMISSION_HARDKEY_READ_LOW" />
-    <uses-permission android:name="com.fca.Uconnect.CommonApp.permission.FCA_PERMISSION_PERSISTFILE_READ_LOW" />
-    <uses-permission android:name="com.fca.Uconnect.CommonApp.permission.FCA_PERMISSION_PERSISTFILE_WRITE_LOW" />
-    <uses-permission android:name="com.fca.Uconnect.CommonApp.permission.FCA_PERMISSION_POWERMODE_READ_LOW" />
-    <uses-permission android:name="com.fca.Uconnect.CommonApp.permission.FCA_PERMISSION_PROFILE_READ_HIGH" />
-    <uses-permission android:name="com.fca.Uconnect.CommonApp.permission.FCA_PERMISSION_PROFILE_WRITE_HIGH" />
-    <uses-permission android:name="com.fca.Uconnect.CommonApp.permission.FCA_PERMISSION_VARIANTINFO_READ_LOW" />
-    <uses-permission android:name="com.fca.Uconnect.CommonApp.permission.FCA_PERMISSION_VARIANTINFO_READ_MEDIUM" />
-    <uses-permission android:name="com.fca.Uconnect.CommonApp.permission.FCA_PERMISSION_VEHACN_READ_HIGH" />
-    <uses-permission android:name="com.fca.Uconnect.CommonApp.permission.FCA_PERMISSION_VEHSTATUS_WRITE_HIGH" />
-    <uses-permission android:name="com.fca.Uconnect.CommonApp.permission.FCA_PERMISSION_VEHSTATUS_READ_HIGH" />
-    <uses-permission android:name="com.fca.Uconnect.CommonApp.permission.FCA_PERMISSION_VEHSTATUS_READ_LOW" />
-    <uses-permission android:name="com.fca.Uconnect.CommonApp.permission.FCA_PERMISSION_VEHPOWERTRAIN_READ_HIGH" />
-    <uses-permission android:name="com.fca.Uconnect.CommonApp.permission.FCA_PERMISSION_VEHPOWERTRAIN_WRITE_HIGH" />
-    <uses-permission android:name="com.fca.Uconnect.CommonApp.permission.FCA_PERMISSION_VEHWARNING_READ_LOW" />
-    <uses-permission android:name="com.fca.Uconnect.CommonApp.permission.FCA_PERMISSION_VEHINPUT_WRITE_HIGH" />
-    <uses-permission android:name="com.fca.Uconnect.CommonApp.permission.FCA_PERMISSION_VEHINPUT_READ_HIGH" />
-    <uses-permission android:name="com.fca.Uconnect.CommonApp.permission.FCA_PERMISSION_VEHHVAC_READ_HIGH" />
-    <uses-permission android:name="com.fca.Uconnect.CommonApp.permission.FCA_PERMISSION_VEHCRUISECONTROL_READ_HIGH" />
-    <uses-permission android:name="com.fca.Uconnect.CommonApp.permission.FCA_PERMISSION_VEHEXTRAS_READ_HIGH" />
-    <uses-permission android:name="com.fca.Uconnect.CommonApp.permission.FCA_PERMISSION_VEHDRIVESTATUS_READ_HIGH" />
-    <uses-permission android:name="com.fca.Uconnect.CommonApp.permission.FCA_PERMISSION_VEHDRIVESTATUS_WRITE_HIGH" />
-    <uses-permission android:name="com.fca.Uconnect.CommonApp.permission.FCA_PERMISSION_VEHUNIT_READ_LOW" />
-    <uses-permission android:name="com.fca.Uconnect.CommonApp.permission.FCA_PERMISSION_VEHUNIT_WRITE_LOW" />
-    <uses-permission android:name="com.fca.Uconnect.CommonApp.permission.FCA_PERMISSION_VEHUNIT_WRITE_HIGH" />
-    <uses-permission android:name="com.fca.Uconnect.CommonApp.permission.FCA_PERMISSION_VEHTRIP_READ_LOW" />
-    <uses-permission android:name="com.fca.Uconnect.CommonApp.permission.FCA_PERMISSION_VEHCOMFORT_READ_HIGH" />
-    <uses-permission android:name="com.fca.Uconnect.CommonApp.permission.FCA_PERMISSION_VEHCONFIG_READ_HIGH" />
-    <uses-permission android:name="com.fca.Uconnect.CommonApp.permission.FCA_PERMISSION_SRT_READ_LOW" />
-    <uses-permission android:name="com.fca.Uconnect.CommonApp.permission.FCA_PERMISSION_STATUSBAR_WRITE_LOW" />
-    <uses-permission android:name="com.fca.Uconnect.CommonApp.permission.FCA_PERMISSION_STATUSBAR_READ_LOW" />
-    <uses-permission android:name="com.fca.Uconnect.CommonApp.permission.FCA_PERMISSION_SECUREKEY_READ_HIGH" />
-    <uses-permission android:name="com.fca.Uconnect.CommonApp.permission.FCA_PERMISSION_LOCKOUT_READ_HIGH" />
+    package="com.example.tutorials">
 
     <application
         android:allowBackup="true"
@@ -54,9 +14,6 @@
             android:theme="@android:style/Theme.Dialog">
         </activity>
 
-        <uses-library
-            android:name="fca.loader"
-            android:required="true" />
         <activity android:name=".CompleteScreenActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -64,10 +21,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
-            android:name=".SpeedLockoutPopUp"
-            android:theme="@style/AppTheme.CustomTheme">
         </activity>
     </application>
 

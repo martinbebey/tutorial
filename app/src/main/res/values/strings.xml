@@ -2,11 +2,11 @@
     <string name="app_name">Tutorials</string>
     <string name="continue_button">Continue</string>
     <string name="complete_screen_title">Complete</string>
-    <string name="welcome_text">Welcome, Adam!</string>
-    <string name="thanks_message">Thanks for creating a profile and learning about your radio</string>
+    <string name="welcome_text">Welcome!</string>
+    <string name="thanks_message">Thanks for learning about your device</string>
     <string name="exit_button_text">Exit Tutorial</string>
     <string name="find_again_text">Find again in Apps</string>
-    <string name="screen_description">Learn about your radio</string>
+    <string name="screen_description">Learn about your device</string>
     <string name="video1_title">Home: Add Widgets | 0:08</string>
     <string name="video2_title">Status Bar: Customize | 0:10</string>
     <string name="video3_title">Media: Save Sources | 0:07</string>
@@ -23,4 +23,7 @@
     <string name="video3_caption_8sTo15s">Presets can be a mix of AM and FM</string>
     <string name="video4_caption_0sTo3s">Press and hold source to drag</string>
     <string name="video4_caption_3sTo6s">Drag to the left</string>
+    <string name="play_button_image_description">play button image</string>
+    <string name="back_button_image_description">back button image</string>
+    <string name="close_button_description">Close</string>
 </resources>

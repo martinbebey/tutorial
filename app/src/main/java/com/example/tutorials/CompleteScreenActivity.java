@@ -10,7 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.example.t8801cb.tutorials.R;
+import com.example.tutorials.R;
 
 import java.io.FileInputStream;
 import java.io.InputStream;
@@ -33,13 +33,13 @@ public class CompleteScreenActivity extends AppCompatActivity
 //        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //load the all apps icon
-        ImageView iv= findViewById(R.id.apps_image);
-        //String path = "android.resource://" + getPackageName() + "/" + R.raw.apps;
-        InputStream is = this.getResources().openRawResource(R.raw.apps);//new FileInputStream(path);
-        Drawable icon = new BitmapDrawable(is);
-//        Log.i("Fnord", "width="+icon.getIntrinsicWidth()+
-//                " height="+icon.getIntrinsicHeight());
-        iv.setImageDrawable(icon);
+//        ImageView iv= findViewById(R.id.apps_image);
+//        //String path = "android.resource://" + getPackageName() + "/" + R.raw.apps;
+//        InputStream is = this.getResources().openRawResource(R.raw.apps);//new FileInputStream(path);
+//        Drawable icon = new BitmapDrawable(is);
+////        Log.i("Fnord", "width="+icon.getIntrinsicWidth()+
+////                " height="+icon.getIntrinsicHeight());
+//        iv.setImageDrawable(icon);
 
 
     }

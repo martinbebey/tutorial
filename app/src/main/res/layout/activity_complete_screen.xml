@@ -115,17 +115,17 @@
         android:id="@+id/apps_frame"
         android:layout_width="71dp"
         android:layout_height="63dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="@+id/find_again_text"
         app:layout_constraintEnd_toStartOf="@+id/find_again_text"
-        app:layout_constraintTop_toTopOf="@+id/find_again_text"
-        app:layout_constraintVertical_bias="0.59">
+        app:layout_constraintTop_toTopOf="@+id/find_again_text">
 
         <ImageView
             android:id="@+id/apps_image"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
-            android:layout_marginRight="10dp"
             android:contentDescription="@string/apps_image_description" />
 
     </FrameLayout>
@@ -134,8 +134,9 @@
         android:id="@+id/back_button"
         android:layout_width="100dp"
         android:layout_height="50dp"
+        android:contentDescription="@string/back_button_image_description"
         android:onClick="ReturnToPreviousScreen"
-        app:srcCompat="@drawable/ic_arrow_back_circle"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="-1dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_arrow_back_circle" />
 </android.support.constraint.ConstraintLayout>

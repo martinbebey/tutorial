@@ -1,5 +1,6 @@
 package com.example.tutorials;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.util.Log;
@@ -13,12 +14,12 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.VideoView;
 
-import com.example.t8801cb.tutorials.R;
+import com.example.tutorials.R;
 
-public class VideoPlayerActivity extends AppCompatActivity
+public class VideoPlayerActivity extends Activity
 {
 
-    private TextView textView, captionView = findViewById(R.id.caption_box);;
+    private TextView textView, captionView;
     private Intent intent;
     private String videoTitle = "video", thisClass = this.getClass().getName();
     private int elapsedTime = 0;
@@ -45,17 +46,18 @@ public class VideoPlayerActivity extends AppCompatActivity
         Log.i(thisClass, "selected " + videoTitle);
 
         //video 1
-        if (intent.getStringExtra("videoNumber") == "1")
+        if (intent.getStringExtra("videoNumber").equals("1"))
         {
             //preparing the video
             VideoView videoView = findViewById(R.id.videoView);
 
-            String videoPath = "android.resource://" + getPackageName() + "/" + "raw/" + videoTitle;
+            String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.video2;//"raw/" + videoTitle;
             Uri uri1 = Uri.parse(videoPath);
             videoView.setVideoURI(uri1);
             android.widget.MediaController mediaController = new MediaController(this, false);
             videoView.setMediaController(mediaController);
             mediaController.setAnchorView(videoView);
+            //mediaController.show();
             video1IsComplete = false;
 
             videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener()
@@ -71,34 +73,34 @@ public class VideoPlayerActivity extends AppCompatActivity
 
             videoView.start();
 
-            while(!video1IsComplete)
-            {
-                elapsedTime = videoView.getDuration();
-
-                if(elapsedTime >= 0 && elapsedTime < 3000)
-                {
-                    captionView.setText(R.string.video1_caption_0sTo3s);
-                    captionView.setVisibility(View.VISIBLE);
-                }
-
-                else if(elapsedTime >= 3000 && elapsedTime < 6000)
-                {
-                    captionView.setText(R.string.video1_caption_3sTo6s);
-                    captionView.setVisibility(View.VISIBLE);
-                }
-
-                else if(elapsedTime >= 8000 && elapsedTime < 10000)
-                {
-                    captionView.setText(R.string.video1_caption_8sTo10s);
-                    captionView.setVisibility(View.VISIBLE);
-                }
-
-                else
-                {
-                    captionView.setText("");
-                    captionView.setVisibility(View.INVISIBLE);
-                }
-            }
+//            while(!video1IsComplete)
+//            {
+//                elapsedTime = videoView.getDuration();
+//
+//                if(elapsedTime >= 0 && elapsedTime < 3000)
+//                {
+//                    captionView.setText(R.string.video1_caption_0sTo3s);
+//                    captionView.setVisibility(View.VISIBLE);
+//                }
+//
+//                else if(elapsedTime >= 3000 && elapsedTime < 6000)
+//                {
+//                    captionView.setText(R.string.video1_caption_3sTo6s);
+//                    captionView.setVisibility(View.VISIBLE);
+//                }
+//
+//                else if(elapsedTime >= 8000 && elapsedTime < 10000)
+//                {
+//                    captionView.setText(R.string.video1_caption_8sTo10s);
+//                    captionView.setVisibility(View.VISIBLE);
+//                }
+//
+//                else
+//                {
+//                    captionView.setText(" ");
+//                    captionView.setVisibility(View.INVISIBLE);
+//                }
+//            }
         }
 
         //video 2

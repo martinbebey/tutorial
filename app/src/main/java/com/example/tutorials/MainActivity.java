@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,7 +20,7 @@ import android.widget.MediaController;
 import android.widget.TextView;
 import android.widget.VideoView;
 
-import com.example.t8801cb.tutorials.R;
+import com.example.tutorials.R;
 
 import java.util.Locale;
 import java.util.concurrent.ExecutorService;
@@ -27,67 +28,34 @@ import java.util.concurrent.Executors;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ImageView playImage;
+    //public ImageView playImage;
     private String thisClass = this.getClass().getName();
     public static boolean speedLockoutPopupIsEnabled = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+        Log.i(thisClass, "started main activity");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+//        LayoutInflater inflater = this.getLayoutInflater();
+//        View view = inflater.inflate(R.layout.activity_main, null);
+//        playImage = view.findViewById(R.id.video1_button);//.video1_play_image);
+//        if(playImage == null)
+//        {
+//            Log.d(thisClass, "onCreate: playimage is null");
+//        }
+//        playImage.setImageResource(R.drawable.ic_media_play);
 
-        Log.i(thisClass, "started main activity");
 
         //Add back button
 //        getSupportActionBar().setDisplayShowHomeEnabled(true);
 //        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         // Instantiate an ImageView and define its properties for play image
-        Log.i(thisClass, "loading video play images");
-        playImage = findViewById(R.id.video1_play_image);
+        //Log.i(thisClass, "loading video play images");
+        //SetPlayImage();
 
-            playImage.setImageResource(R.drawable.ic_media_play);
-            //i.setContentDescription(getResources().getString(R.string.my_image_desc));
-
-            // set the ImageView bounds to match the Drawable's dimensions
-            playImage.setAdjustViewBounds(true);
-            playImage.setLayoutParams(new ViewGroup.LayoutParams(
-                    ViewGroup.LayoutParams.WRAP_CONTENT,
-                    ViewGroup.LayoutParams.WRAP_CONTENT));
-
-        playImage = findViewById(R.id.video2_play_image);
-
-        playImage.setImageResource(R.drawable.ic_media_play);
-        //i.setContentDescription(getResources().getString(R.string.my_image_desc));
-
-        // set the ImageView bounds to match the Drawable's dimensions
-        playImage.setAdjustViewBounds(true);
-        playImage.setLayoutParams(new ViewGroup.LayoutParams(
-                ViewGroup.LayoutParams.WRAP_CONTENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT));
-
-        playImage = findViewById(R.id.video3_play_image);
-
-        playImage.setImageResource(R.drawable.ic_media_play);
-        //i.setContentDescription(getResources().getString(R.string.my_image_desc));
-
-        // set the ImageView bounds to match the Drawable's dimensions
-        playImage.setAdjustViewBounds(true);
-        playImage.setLayoutParams(new ViewGroup.LayoutParams(
-                ViewGroup.LayoutParams.WRAP_CONTENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT));
-
-        playImage = findViewById(R.id.video4_play_image);
-
-        playImage.setImageResource(R.drawable.ic_media_play);
-        //i.setContentDescription(getResources().getString(R.string.my_image_desc));
-
-        // set the ImageView bounds to match the Drawable's dimensions
-        playImage.setAdjustViewBounds(true);
-        playImage.setLayoutParams(new ViewGroup.LayoutParams(
-                ViewGroup.LayoutParams.WRAP_CONTENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT));
 
 
 //        //video 1
@@ -127,6 +95,53 @@ public class MainActivity extends AppCompatActivity {
 //        mediaController4.setAnchorView(videoView4);
     }
 
+//    private void SetPlayImage()
+//    {
+//        playImage = findViewById(R.id.video1_play_image);
+//
+//        playImage.setImageResource(R.drawable.ic_media_play);
+//        //i.setContentDescription(getResources().getString(R.string.my_image_desc));
+//
+//        // set the ImageView bounds to match the Drawable's dimensions
+//        playImage.setAdjustViewBounds(true);
+//        playImage.setLayoutParams(new ViewGroup.LayoutParams(
+//                ViewGroup.LayoutParams.WRAP_CONTENT,
+//                ViewGroup.LayoutParams.WRAP_CONTENT));
+//
+//        playImage = findViewById(R.id.video2_play_image);
+//
+//        playImage.setImageResource(R.drawable.ic_media_play);
+//        //i.setContentDescription(getResources().getString(R.string.my_image_desc));
+//
+//        // set the ImageView bounds to match the Drawable's dimensions
+//        playImage.setAdjustViewBounds(true);
+//        playImage.setLayoutParams(new ViewGroup.LayoutParams(
+//                ViewGroup.LayoutParams.WRAP_CONTENT,
+//                ViewGroup.LayoutParams.WRAP_CONTENT));
+//
+//        playImage = findViewById(R.id.video3_play_image);
+//
+//        playImage.setImageResource(R.drawable.ic_media_play);
+//        //i.setContentDescription(getResources().getString(R.string.my_image_desc));
+//
+//        // set the ImageView bounds to match the Drawable's dimensions
+//        playImage.setAdjustViewBounds(true);
+//        playImage.setLayoutParams(new ViewGroup.LayoutParams(
+//                ViewGroup.LayoutParams.WRAP_CONTENT,
+//                ViewGroup.LayoutParams.WRAP_CONTENT));
+//
+//        playImage = findViewById(R.id.video4_play_image);
+//
+//        playImage.setImageResource(R.drawable.ic_media_play);
+//        //i.setContentDescription(getResources().getString(R.string.my_image_desc));
+//
+//        // set the ImageView bounds to match the Drawable's dimensions
+//        playImage.setAdjustViewBounds(true);
+//        playImage.setLayoutParams(new ViewGroup.LayoutParams(
+//                ViewGroup.LayoutParams.WRAP_CONTENT,
+//                ViewGroup.LayoutParams.WRAP_CONTENT));
+//    }
+
     /** Called when the user taps the Continue button */
     public void Continue(View view)
     {
@@ -145,30 +160,33 @@ public class MainActivity extends AppCompatActivity {
                 Log.i(thisClass, "updating video1 progress bar");
                 Log.i(thisClass, "video1IsComplete value -> " + VideoPlayerActivity.video1IsComplete);
                 // Instantiate an ImageView and define its properties for play image
-                playImage = findViewById(R.id.video1_play_image);
+               // playImage = findViewById(R.id.video1_play_image);
 
                 if (VideoPlayerActivity.video1IsComplete)
                 {
+                    ImageView playImage = findViewById(R.id.video1_play_image);
                     playImage.setImageResource(R.drawable.ic_media_play_full);
                     //i.setContentDescription(getResources().getString(R.string.my_image_desc));
 
                     // set the ImageView bounds to match the Drawable's dimensions
                     playImage.setAdjustViewBounds(true);
-                    playImage.setLayoutParams(new ViewGroup.LayoutParams(
-                            ViewGroup.LayoutParams.WRAP_CONTENT,
-                            ViewGroup.LayoutParams.WRAP_CONTENT));
+//                    playImage.setLayoutParams(new ViewGroup.LayoutParams(
+//                            ViewGroup.LayoutParams.WRAP_CONTENT,
+//                            ViewGroup.LayoutParams.WRAP_CONTENT));
                 }
 
                 else
                 {
+                    ImageView playImage = findViewById(R.id.video1_play_image);
+                    playImage = findViewById(R.id.video1_play_image);
                     playImage.setImageResource(R.drawable.ic_media_play_half);
                     //i.setContentDescription(getResources().getString(R.string.my_image_desc));
 
                     // set the ImageView bounds to match the Drawable's dimensions
                     playImage.setAdjustViewBounds(true);
-                    playImage.setLayoutParams(new ViewGroup.LayoutParams(
-                            ViewGroup.LayoutParams.WRAP_CONTENT,
-                            ViewGroup.LayoutParams.WRAP_CONTENT));
+//                    playImage.setLayoutParams(new ViewGroup.LayoutParams(
+//                            ViewGroup.LayoutParams.WRAP_CONTENT,
+//                            ViewGroup.LayoutParams.WRAP_CONTENT));
                 }
                 break;
 
@@ -177,10 +195,11 @@ public class MainActivity extends AppCompatActivity {
                 // Instantiate an ImageView and define its properties for play image
                 Log.i(thisClass, "updating video2 progress bar");
                 Log.i(thisClass, "video2IsComplete value -> " + VideoPlayerActivity.video2IsComplete);
-                playImage = findViewById(R.id.video2_play_image);
+                //playImage = findViewById(R.id.video2_play_image);
 
                 if (VideoPlayerActivity.video2IsComplete)
                 {
+                    ImageView playImage = findViewById(R.id.video1_play_image);
                     playImage.setImageResource(R.drawable.ic_media_play_full);
                     //i.setContentDescription(getResources().getString(R.string.my_image_desc));
 
@@ -193,6 +212,7 @@ public class MainActivity extends AppCompatActivity {
 
                 else
                 {
+                    ImageView playImage = findViewById(R.id.video1_play_image);
                     playImage.setImageResource(R.drawable.ic_media_play_half);
                     //i.setContentDescription(getResources().getString(R.string.my_image_desc));
 
@@ -209,10 +229,11 @@ public class MainActivity extends AppCompatActivity {
                 // Instantiate an ImageView and define its properties for play image
                 Log.i(thisClass, "updating video3 progress bar");
                 Log.i(thisClass, "video3IsComplete value -> " + VideoPlayerActivity.video3IsComplete);
-                playImage = findViewById(R.id.video3_play_image);
+                //playImage = findViewById(R.id.video3_play_image);
 
                 if (VideoPlayerActivity.video3IsComplete)
                 {
+                    ImageView playImage = findViewById(R.id.video1_play_image);
                     playImage.setImageResource(R.drawable.ic_media_play_full);
                     //i.setContentDescription(getResources().getString(R.string.my_image_desc));
 
@@ -225,6 +246,7 @@ public class MainActivity extends AppCompatActivity {
 
                 else
                 {
+                    ImageView playImage = findViewById(R.id.video1_play_image);
                     playImage.setImageResource(R.drawable.ic_media_play_half);
                     //i.setContentDescription(getResources().getString(R.string.my_image_desc));
 
@@ -241,10 +263,11 @@ public class MainActivity extends AppCompatActivity {
                 // Instantiate an ImageView and define its properties for play image
                 Log.i(thisClass, "updating video4 progress bar");
                 Log.i(thisClass, "video4IsComplete value -> " + VideoPlayerActivity.video4IsComplete);
-                playImage = findViewById(R.id.video4_play_image);
+                //playImage = findViewById(R.id.video4_play_image);
 
                 if (VideoPlayerActivity.video4IsComplete)
                 {
+                    ImageView playImage = findViewById(R.id.video1_play_image);
                     playImage.setImageResource(R.drawable.ic_media_play_full);
                     //i.setContentDescription(getResources().getString(R.string.my_image_desc));
 
@@ -257,6 +280,7 @@ public class MainActivity extends AppCompatActivity {
 
                 else
                 {
+                    ImageView playImage = findViewById(R.id.video1_play_image);
                     playImage.setImageResource(R.drawable.ic_media_play_half);
                     //i.setContentDescription(getResources().getString(R.string.my_image_desc));
 
@@ -273,55 +297,69 @@ public class MainActivity extends AppCompatActivity {
     /** Called when the user taps a video button */
     public void PlayVideo(View view)
     {
-        Log.i(thisClass, "begin play video");
+        Log.i(thisClass, "begin PlayVideo");
         Intent intent = new Intent(this, VideoPlayerActivity.class);
-        TextView videoTitle;
 
-        switch(view.getId())
+        Thread thread = new Thread()
         {
-            case R.id.video1_play_image:
-            case R.id.video1_button:
-                Log.i(thisClass, "begin play video 1");
-                intent.putExtra("videoNumber","1");
-                videoTitle = (TextView)findViewById(R.id.video1_title);
-                intent.putExtra("videoTitle", videoTitle.getText());
-                break;
+            public void run()
+            {
 
-            case R.id.video2_play_image:
-            case R.id.video2_button:
-                Log.i(thisClass, "begin play video 2");
-                intent.putExtra("videoNumber","2");
-                videoTitle = (TextView)findViewById(R.id.video2_title);
-                intent.putExtra("videoTitle", videoTitle.getText());
-                break;
+                TextView videoTitle;
 
-            case R.id.video3_play_image:
-            case R.id.video3_button:
-                Log.i(thisClass, "begin play video 3");
-                intent.putExtra("videoNumber","3");
-                videoTitle = (TextView)findViewById(R.id.video3_title);
-                intent.putExtra("videoTitle", videoTitle.getText());
-                break;
+                switch(view.getId())
+                {
+                    case R.id.video1_play_image:
+                    case R.id.video1_button:
+                        Log.i(thisClass, "begin play video 1");
+                        intent.putExtra("videoNumber","1");
+                        videoTitle = (TextView)findViewById(R.id.video1_title);
+                        intent.putExtra("videoTitle", videoTitle.getText());
+                        startActivity(intent);
+                        break;
 
-            case R.id.video4_play_image:
-            case R.id.video4_button:
-                Log.i(thisClass, "begin play video 4");
-                intent.putExtra("videoNumber","4");
-                videoTitle = (TextView)findViewById(R.id.video4_title);
-                intent.putExtra("videoTitle", videoTitle.getText());
-                break;
-        }
+                    case R.id.video2_play_image:
+                    case R.id.video2_button:
+                        Log.i(thisClass, "begin play video 2");
+                        intent.putExtra("videoNumber","2");
+                        videoTitle = (TextView)findViewById(R.id.video2_title);
+                        intent.putExtra("videoTitle", videoTitle.getText());
+                        startActivity(intent);
+                        break;
 
-        startActivity(intent);
+                    case R.id.video3_play_image:
+                    case R.id.video3_button:
+                        Log.i(thisClass, "begin play video 3");
+                        intent.putExtra("videoNumber","3");
+                        videoTitle = (TextView)findViewById(R.id.video3_title);
+                        intent.putExtra("videoTitle", videoTitle.getText());
+                        startActivity(intent);
+                        break;
 
-        while(!VideoPlayerActivity.videoIsClosed)
-        {
+                    case R.id.video4_play_image:
+                    case R.id.video4_button:
+                        Log.i(thisClass, "begin play video 4");
+                        intent.putExtra("videoNumber","4");
+                        videoTitle = (TextView)findViewById(R.id.video4_title);
+                        intent.putExtra("videoTitle", videoTitle.getText());
+                        startActivity(intent);
+                        break;
+                }
 
-        }
+                //startActivity(intent);
 
-        Log.i(thisClass, "videoIsClosed value -> " + VideoPlayerActivity.videoIsClosed);
+                while(!VideoPlayerActivity.videoIsClosed)
+                {
 
-        UpdateVideoProgressBar(view.getId());
+                }
+
+                Log.i(thisClass, "videoIsClosed value -> " + VideoPlayerActivity.videoIsClosed);
+
+                UpdateVideoProgressBar(view.getId());
+            }
+        };
+        thread.start();
+
     }
 
     /** Called when the user taps the back button */
