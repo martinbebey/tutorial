@@ -41,36 +41,9 @@
         android:layout_marginStart="24dp"
         android:background="#8BC34A"
         android:onClick="PlayVideo"
+        android:theme="@android:style/Theme.Translucent"
         app:layout_constraintBottom_toBottomOf="@+id/video1_button"
         app:layout_constraintStart_toEndOf="@id/video1_button" />
-
-    <ImageView
-        android:id="@+id/video2_play_image"
-        android:layout_width="108dp"
-        android:layout_height="85dp"
-        android:layout_marginEnd="8dp"
-        android:contentDescription="@string/play_button_image_description"
-        android:onClick="PlayVideo"
-        app:layout_constraintBottom_toBottomOf="@+id/video2_button"
-        app:layout_constraintEnd_toEndOf="@+id/video2_button"
-        app:layout_constraintStart_toStartOf="@+id/video2_button"
-        app:layout_constraintTop_toTopOf="@+id/video2_button"
-        app:srcCompat="@drawable/ic_media_play" />
-
-    <ImageView
-        android:id="@+id/video3_play_image"
-        android:layout_width="108dp"
-        android:layout_height="85dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:contentDescription="@string/play_button_image_description"
-        android:onClick="PlayVideo"
-        app:layout_constraintBottom_toBottomOf="@+id/video3_button"
-        app:layout_constraintEnd_toStartOf="@+id/video4_button"
-        app:layout_constraintHorizontal_bias="0.452"
-        app:layout_constraintStart_toStartOf="@+id/video3_button"
-        app:layout_constraintTop_toTopOf="@+id/video3_button"
-        app:srcCompat="@drawable/ic_media_play" />
 
     <Button
         android:id="@+id/video3_button"
@@ -88,7 +61,7 @@
         android:layout_height="168dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="40dp"
-        android:background="#FFC107"
+        android:background="@android:color/holo_purple"
         android:onClick="PlayVideo"
         app:layout_constraintStart_toEndOf="@+id/video1_button"
         app:layout_constraintTop_toBottomOf="@+id/video1_button" />
@@ -101,7 +74,7 @@
         android:layout_marginBottom="8dp"
         android:text="@string/app_name"
         android:textColor="@android:color/white"
-        android:textSize="14sp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -133,31 +106,6 @@
         app:layout_constraintTop_toBottomOf="@+id/video4_button" />
 
     <ImageView
-        android:id="@+id/video1_play_image"
-        android:layout_width="108dp"
-        android:layout_height="85dp"
-        android:layout_marginBottom="8dp"
-        android:contentDescription="@string/play_button_image_description"
-        android:onClick="PlayVideo"
-        app:layout_constraintBottom_toBottomOf="@+id/video1_button"
-        app:layout_constraintEnd_toEndOf="@+id/video1_button"
-        app:layout_constraintStart_toStartOf="@+id/video1_button"
-        app:layout_constraintTop_toTopOf="@+id/video1_button"
-        app:srcCompat="@drawable/ic_media_play" />
-
-    <ImageView
-        android:id="@+id/video4_play_image"
-        android:layout_width="108dp"
-        android:layout_height="85dp"
-        android:contentDescription="@string/play_button_image_description"
-        android:onClick="PlayVideo"
-        app:layout_constraintBottom_toBottomOf="@+id/video4_button"
-        app:layout_constraintEnd_toEndOf="@+id/video4_button"
-        app:layout_constraintStart_toStartOf="@+id/video4_button"
-        app:layout_constraintTop_toTopOf="@+id/video4_button"
-        app:srcCompat="@drawable/ic_media_play" />
-
-    <ImageView
         android:id="@+id/back_button"
         android:layout_width="92dp"
         android:layout_height="47dp"
@@ -187,6 +135,7 @@
         android:textColor="@color/white"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/video2_button"
+        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="@+id/video2_button"
         app:layout_constraintTop_toBottomOf="@+id/video2_button" />
 
@@ -211,4 +160,62 @@
         app:layout_constraintEnd_toEndOf="@+id/video4_button"
         app:layout_constraintStart_toStartOf="@+id/video4_button"
         app:layout_constraintTop_toBottomOf="@+id/video4_button" />
+
+    <ImageView
+        android:id="@+id/video1_play_image"
+        android:layout_width="352dp"
+        android:layout_height="168dp"
+        android:background="#B2F43636"
+        android:contentDescription="@string/play_button_image_description"
+        android:elevation="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/video1_button"
+        app:layout_constraintEnd_toEndOf="@+id/video1_button"
+        app:layout_constraintStart_toStartOf="@+id/video1_button"
+        app:layout_constraintTop_toTopOf="@+id/video1_button"
+        app:srcCompat="@drawable/ic_media_play" />
+
+    <ImageView
+        android:id="@+id/video2_play_image"
+        android:layout_width="352dp"
+        android:layout_height="168dp"
+        android:layout_marginTop="8dp"
+        android:background="#8BC34A"
+        android:contentDescription="@string/play_button_image_description"
+        android:elevation="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/video2_button"
+        app:layout_constraintEnd_toEndOf="@+id/video2_button"
+        app:layout_constraintStart_toStartOf="@+id/video2_button"
+        app:layout_constraintTop_toTopOf="@+id/video2_button"
+        app:srcCompat="@drawable/ic_media_play" />
+
+    <ImageView
+        android:id="@+id/video3_play_image"
+        android:layout_width="352dp"
+        android:layout_height="168dp"
+        android:layout_marginTop="8dp"
+        android:background="#00CDD4"
+        android:contentDescription="@string/play_button_image_description"
+        android:elevation="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/video3_title"
+        app:layout_constraintEnd_toEndOf="@+id/video3_button"
+        app:layout_constraintStart_toStartOf="@+id/video3_button"
+        app:layout_constraintTop_toBottomOf="@+id/video1_title"
+        app:srcCompat="@drawable/ic_media_play" />
+
+    <ImageView
+        android:id="@+id/video4_play_image"
+        android:layout_width="352dp"
+        android:layout_height="168dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@android:color/holo_purple"
+        android:contentDescription="@string/play_button_image_description"
+        android:elevation="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/video4_title"
+        app:layout_constraintEnd_toEndOf="@+id/video4_button"
+        app:layout_constraintStart_toStartOf="@+id/video4_button"
+        app:layout_constraintTop_toBottomOf="@+id/video2_title"
+        app:srcCompat="@drawable/ic_media_play" />
+
+
 </android.support.constraint.ConstraintLayout>

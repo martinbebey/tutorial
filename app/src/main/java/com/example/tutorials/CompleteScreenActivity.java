@@ -48,7 +48,21 @@ public class CompleteScreenActivity extends AppCompatActivity
     public void ExitTutorial(View view)
     {
         Log.i(thisClass, "exit tutorial button pressed");
+
+        //reset tutorials complete status
+        VideoPlayerActivity.video1IsComplete = false;
+        VideoPlayerActivity.video2IsComplete = false;
+        VideoPlayerActivity.video3IsComplete = false;
+        VideoPlayerActivity.video4IsComplete = false;
+
         this.finish();
+
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.putExtra("EXIT", true);
+        startActivity(intent);
+
+        //return to the device's main screen
         Intent startMain = new Intent(Intent.ACTION_MAIN);
         startMain.addCategory(Intent.CATEGORY_HOME);
         startMain.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

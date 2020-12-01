@@ -15,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.MediaController;
 import android.widget.TextView;
@@ -26,11 +27,18 @@ import java.util.Locale;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+
+
 public class MainActivity extends AppCompatActivity {
 
     //public ImageView playImage;
     private String thisClass = this.getClass().getName();
-    public static boolean speedLockoutPopupIsEnabled = false;
+    //public static boolean speedLockoutPopupIsEnabled = false;
+    public static Button continueButton;
+    public static ImageView video1_play_image;
+    public static ImageView video2_play_image;
+    public static ImageView video3_play_image;
+    public static ImageView video4_play_image;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +46,19 @@ public class MainActivity extends AppCompatActivity {
         Log.i(thisClass, "started main activity");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        continueButton = findViewById(R.id.continue_button);
+
+        video1_play_image = findViewById(R.id.video1_play_image);
+        video2_play_image = findViewById(R.id.video2_play_image);
+        video3_play_image = findViewById(R.id.video3_play_image);
+        video4_play_image = findViewById(R.id.video4_play_image);
+
+        continueButton.setVisibility(View.INVISIBLE);//set to invisible until the user has completed the tutorial
+
+        if(VideoPlayerActivity.video1IsComplete && VideoPlayerActivity.video2IsComplete && VideoPlayerActivity.video3IsComplete && VideoPlayerActivity.video4IsComplete)
+        {
+            findViewById(R.id.continue_button).setVisibility(View.VISIBLE);
+        }
 //        LayoutInflater inflater = this.getLayoutInflater();
 //        View view = inflater.inflate(R.layout.activity_main, null);
 //        playImage = view.findViewById(R.id.video1_button);//.video1_play_image);
@@ -146,6 +167,8 @@ public class MainActivity extends AppCompatActivity {
     public void Continue(View view)
     {
         Log.i(thisClass, "continue button pressed");
+
+        //go to the next screen
         Intent intent = new Intent(this, CompleteScreenActivity.class);
         startActivity(intent);
     }
@@ -162,32 +185,32 @@ public class MainActivity extends AppCompatActivity {
                 // Instantiate an ImageView and define its properties for play image
                // playImage = findViewById(R.id.video1_play_image);
 
-                if (VideoPlayerActivity.video1IsComplete)
-                {
-                    ImageView playImage = findViewById(R.id.video1_play_image);
-                    playImage.setImageResource(R.drawable.ic_media_play_full);
-                    //i.setContentDescription(getResources().getString(R.string.my_image_desc));
-
-                    // set the ImageView bounds to match the Drawable's dimensions
-                    playImage.setAdjustViewBounds(true);
-//                    playImage.setLayoutParams(new ViewGroup.LayoutParams(
-//                            ViewGroup.LayoutParams.WRAP_CONTENT,
-//                            ViewGroup.LayoutParams.WRAP_CONTENT));
-                }
-
-                else
-                {
-                    ImageView playImage = findViewById(R.id.video1_play_image);
-                    playImage = findViewById(R.id.video1_play_image);
-                    playImage.setImageResource(R.drawable.ic_media_play_half);
-                    //i.setContentDescription(getResources().getString(R.string.my_image_desc));
-
-                    // set the ImageView bounds to match the Drawable's dimensions
-                    playImage.setAdjustViewBounds(true);
-//                    playImage.setLayoutParams(new ViewGroup.LayoutParams(
-//                            ViewGroup.LayoutParams.WRAP_CONTENT,
-//                            ViewGroup.LayoutParams.WRAP_CONTENT));
-                }
+//                if (VideoPlayerActivity.video1IsComplete)
+//                {
+//                    ImageView playImage = findViewById(R.id.video1_play_image);
+//                    playImage.setImageResource(R.drawable.ic_media_play_full);
+//                    //i.setContentDescription(getResources().getString(R.string.my_image_desc));
+//
+//                    // set the ImageView bounds to match the Drawable's dimensions
+//                    playImage.setAdjustViewBounds(true);
+////                    playImage.setLayoutParams(new ViewGroup.LayoutParams(
+////                            ViewGroup.LayoutParams.WRAP_CONTENT,
+////                            ViewGroup.LayoutParams.WRAP_CONTENT));
+//                }
+//
+//                else
+//                {
+//                    ImageView playImage = findViewById(R.id.video1_play_image);
+//                    playImage = findViewById(R.id.video1_play_image);
+//                    playImage.setImageResource(R.drawable.ic_media_play_half);
+//                    //i.setContentDescription(getResources().getString(R.string.my_image_desc));
+//
+//                    // set the ImageView bounds to match the Drawable's dimensions
+//                    playImage.setAdjustViewBounds(true);
+////                    playImage.setLayoutParams(new ViewGroup.LayoutParams(
+////                            ViewGroup.LayoutParams.WRAP_CONTENT,
+////                            ViewGroup.LayoutParams.WRAP_CONTENT));
+//                }
                 break;
 
             case R.id.video2_play_image:
@@ -197,31 +220,31 @@ public class MainActivity extends AppCompatActivity {
                 Log.i(thisClass, "video2IsComplete value -> " + VideoPlayerActivity.video2IsComplete);
                 //playImage = findViewById(R.id.video2_play_image);
 
-                if (VideoPlayerActivity.video2IsComplete)
-                {
-                    ImageView playImage = findViewById(R.id.video1_play_image);
-                    playImage.setImageResource(R.drawable.ic_media_play_full);
-                    //i.setContentDescription(getResources().getString(R.string.my_image_desc));
-
-                    // set the ImageView bounds to match the Drawable's dimensions
-                    playImage.setAdjustViewBounds(true);
-                    playImage.setLayoutParams(new ViewGroup.LayoutParams(
-                            ViewGroup.LayoutParams.WRAP_CONTENT,
-                            ViewGroup.LayoutParams.WRAP_CONTENT));
-                }
-
-                else
-                {
-                    ImageView playImage = findViewById(R.id.video1_play_image);
-                    playImage.setImageResource(R.drawable.ic_media_play_half);
-                    //i.setContentDescription(getResources().getString(R.string.my_image_desc));
-
-                    // set the ImageView bounds to match the Drawable's dimensions
-                    playImage.setAdjustViewBounds(true);
-                    playImage.setLayoutParams(new ViewGroup.LayoutParams(
-                            ViewGroup.LayoutParams.WRAP_CONTENT,
-                            ViewGroup.LayoutParams.WRAP_CONTENT));
-                }
+//                if (VideoPlayerActivity.video2IsComplete)
+//                {
+//                    ImageView playImage = findViewById(R.id.video2_play_image);
+//                    playImage.setImageResource(R.drawable.ic_media_play_full);
+//                    //i.setContentDescription(getResources().getString(R.string.my_image_desc));
+//
+//                    // set the ImageView bounds to match the Drawable's dimensions
+//                    playImage.setAdjustViewBounds(true);
+////                    playImage.setLayoutParams(new ViewGroup.LayoutParams(
+////                            ViewGroup.LayoutParams.WRAP_CONTENT,
+////                            ViewGroup.LayoutParams.WRAP_CONTENT));
+//                }
+//
+//                else
+//                {
+//                    ImageView playImage = findViewById(R.id.video2_play_image);
+//                    playImage.setImageResource(R.drawable.ic_media_play_half);
+//                    //i.setContentDescription(getResources().getString(R.string.my_image_desc));
+//
+//                    // set the ImageView bounds to match the Drawable's dimensions
+//                    playImage.setAdjustViewBounds(true);
+////                    playImage.setLayoutParams(new ViewGroup.LayoutParams(
+////                            ViewGroup.LayoutParams.WRAP_CONTENT,
+////                            ViewGroup.LayoutParams.WRAP_CONTENT));
+//                }
                 break;
 
             case R.id.video3_play_image:
@@ -231,31 +254,31 @@ public class MainActivity extends AppCompatActivity {
                 Log.i(thisClass, "video3IsComplete value -> " + VideoPlayerActivity.video3IsComplete);
                 //playImage = findViewById(R.id.video3_play_image);
 
-                if (VideoPlayerActivity.video3IsComplete)
-                {
-                    ImageView playImage = findViewById(R.id.video1_play_image);
-                    playImage.setImageResource(R.drawable.ic_media_play_full);
-                    //i.setContentDescription(getResources().getString(R.string.my_image_desc));
-
-                    // set the ImageView bounds to match the Drawable's dimensions
-                    playImage.setAdjustViewBounds(true);
-                    playImage.setLayoutParams(new ViewGroup.LayoutParams(
-                            ViewGroup.LayoutParams.WRAP_CONTENT,
-                            ViewGroup.LayoutParams.WRAP_CONTENT));
-                }
-
-                else
-                {
-                    ImageView playImage = findViewById(R.id.video1_play_image);
-                    playImage.setImageResource(R.drawable.ic_media_play_half);
-                    //i.setContentDescription(getResources().getString(R.string.my_image_desc));
-
-                    // set the ImageView bounds to match the Drawable's dimensions
-                    playImage.setAdjustViewBounds(true);
-                    playImage.setLayoutParams(new ViewGroup.LayoutParams(
-                            ViewGroup.LayoutParams.WRAP_CONTENT,
-                            ViewGroup.LayoutParams.WRAP_CONTENT));
-                }
+//                if (VideoPlayerActivity.video3IsComplete)
+//                {
+//                    ImageView playImage = findViewById(R.id.video3_play_image);
+//                    playImage.setImageResource(R.drawable.ic_media_play_full);
+//                    //i.setContentDescription(getResources().getString(R.string.my_image_desc));
+//
+//                    // set the ImageView bounds to match the Drawable's dimensions
+//                    playImage.setAdjustViewBounds(true);
+////                    playImage.setLayoutParams(new ViewGroup.LayoutParams(
+////                            ViewGroup.LayoutParams.WRAP_CONTENT,
+////                            ViewGroup.LayoutParams.WRAP_CONTENT));
+//                }
+//
+//                else
+//                {
+//                    ImageView playImage = findViewById(R.id.video3_play_image);
+//                    playImage.setImageResource(R.drawable.ic_media_play_half);
+//                    //i.setContentDescription(getResources().getString(R.string.my_image_desc));
+//
+//                    // set the ImageView bounds to match the Drawable's dimensions
+//                    playImage.setAdjustViewBounds(true);
+////                    playImage.setLayoutParams(new ViewGroup.LayoutParams(
+////                            ViewGroup.LayoutParams.WRAP_CONTENT,
+////                            ViewGroup.LayoutParams.WRAP_CONTENT));
+//                }
                 break;
 
             case R.id.video4_play_image:
@@ -265,31 +288,31 @@ public class MainActivity extends AppCompatActivity {
                 Log.i(thisClass, "video4IsComplete value -> " + VideoPlayerActivity.video4IsComplete);
                 //playImage = findViewById(R.id.video4_play_image);
 
-                if (VideoPlayerActivity.video4IsComplete)
-                {
-                    ImageView playImage = findViewById(R.id.video1_play_image);
-                    playImage.setImageResource(R.drawable.ic_media_play_full);
-                    //i.setContentDescription(getResources().getString(R.string.my_image_desc));
-
-                    // set the ImageView bounds to match the Drawable's dimensions
-                    playImage.setAdjustViewBounds(true);
-                    playImage.setLayoutParams(new ViewGroup.LayoutParams(
-                            ViewGroup.LayoutParams.WRAP_CONTENT,
-                            ViewGroup.LayoutParams.WRAP_CONTENT));
-                }
-
-                else
-                {
-                    ImageView playImage = findViewById(R.id.video1_play_image);
-                    playImage.setImageResource(R.drawable.ic_media_play_half);
-                    //i.setContentDescription(getResources().getString(R.string.my_image_desc));
-
-                    // set the ImageView bounds to match the Drawable's dimensions
-                    playImage.setAdjustViewBounds(true);
-                    playImage.setLayoutParams(new ViewGroup.LayoutParams(
-                            ViewGroup.LayoutParams.WRAP_CONTENT,
-                            ViewGroup.LayoutParams.WRAP_CONTENT));
-                }
+//                if (VideoPlayerActivity.video4IsComplete)
+//                {
+//                    ImageView playImage = findViewById(R.id.video4_play_image);
+//                    playImage.setImageResource(R.drawable.ic_media_play_full);
+//                    //i.setContentDescription(getResources().getString(R.string.my_image_desc));
+//
+//                    // set the ImageView bounds to match the Drawable's dimensions
+//                    playImage.setAdjustViewBounds(true);
+////                    playImage.setLayoutParams(new ViewGroup.LayoutParams(
+////                            ViewGroup.LayoutParams.WRAP_CONTENT,
+////                            ViewGroup.LayoutParams.WRAP_CONTENT));
+//                }
+//
+//                else
+//                {
+//                    ImageView playImage = findViewById(R.id.video4_play_image);
+//                    playImage.setImageResource(R.drawable.ic_media_play_half);
+//                    //i.setContentDescription(getResources().getString(R.string.my_image_desc));
+//
+//                    // set the ImageView bounds to match the Drawable's dimensions
+//                    playImage.setAdjustViewBounds(true);
+////                    playImage.setLayoutParams(new ViewGroup.LayoutParams(
+////                            ViewGroup.LayoutParams.WRAP_CONTENT,
+////                            ViewGroup.LayoutParams.WRAP_CONTENT));
+//                }
                 break;
         }
     }
@@ -297,6 +320,7 @@ public class MainActivity extends AppCompatActivity {
     /** Called when the user taps a video button */
     public void PlayVideo(View view)
     {
+        view.bringToFront();
         Log.i(thisClass, "begin PlayVideo");
         Intent intent = new Intent(this, VideoPlayerActivity.class);
 
@@ -307,9 +331,9 @@ public class MainActivity extends AppCompatActivity {
 
                 TextView videoTitle;
 
-                switch(view.getId())
+                switch(view.getId())//start selected video
                 {
-                    case R.id.video1_play_image:
+                    //case R.id.video1_play_image:
                     case R.id.video1_button:
                         Log.i(thisClass, "begin play video 1");
                         intent.putExtra("videoNumber","1");
@@ -318,7 +342,7 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(intent);
                         break;
 
-                    case R.id.video2_play_image:
+                    //case R.id.video2_play_image:
                     case R.id.video2_button:
                         Log.i(thisClass, "begin play video 2");
                         intent.putExtra("videoNumber","2");
@@ -327,7 +351,7 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(intent);
                         break;
 
-                    case R.id.video3_play_image:
+                    //case R.id.video3_play_image:
                     case R.id.video3_button:
                         Log.i(thisClass, "begin play video 3");
                         intent.putExtra("videoNumber","3");
@@ -336,7 +360,7 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(intent);
                         break;
 
-                    case R.id.video4_play_image:
+                    //case R.id.video4_play_image:
                     case R.id.video4_button:
                         Log.i(thisClass, "begin play video 4");
                         intent.putExtra("videoNumber","4");
@@ -353,12 +377,18 @@ public class MainActivity extends AppCompatActivity {
 
                 }
 
-                Log.i(thisClass, "videoIsClosed value -> " + VideoPlayerActivity.videoIsClosed);
+
 
                 UpdateVideoProgressBar(view.getId());
             }
         };
         thread.start();
+
+        Log.i(thisClass, "videoIsClosed value -> " + VideoPlayerActivity.videoIsClosed);
+        Log.i(thisClass, "video1IsComplete value -> " + VideoPlayerActivity.video1IsComplete);
+        Log.i(thisClass, "video2IsComplete value -> " + VideoPlayerActivity.video2IsComplete);
+        Log.i(thisClass, "video3IsComplete value -> " + VideoPlayerActivity.video3IsComplete);
+        Log.i(thisClass, "video4IsComplete value -> " + VideoPlayerActivity.video4IsComplete);
 
     }
 
