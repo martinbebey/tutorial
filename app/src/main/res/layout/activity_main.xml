@@ -29,7 +29,7 @@
         android:layout_height="168dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="80dp"
-        android:background="#B2F43636"
+        android:background="@drawable/video1_image"
         android:onClick="PlayVideo"
         app:layout_constraintEnd_toEndOf="@id/screen_description"
         app:layout_constraintTop_toBottomOf="@id/screen_description" />
@@ -39,7 +39,7 @@
         android:layout_width="352dp"
         android:layout_height="168dp"
         android:layout_marginStart="24dp"
-        android:background="#8BC34A"
+        android:background="@drawable/video2_image"
         android:onClick="PlayVideo"
         android:theme="@android:style/Theme.Translucent"
         app:layout_constraintBottom_toBottomOf="@+id/video1_button"
@@ -50,7 +50,7 @@
         android:layout_width="352dp"
         android:layout_height="168dp"
         android:layout_marginTop="40dp"
-        android:background="#00CDD4"
+        android:background="@drawable/video3_image"
         android:onClick="PlayVideo"
         app:layout_constraintStart_toStartOf="@+id/video1_button"
         app:layout_constraintTop_toBottomOf="@+id/video1_button" />
@@ -61,7 +61,7 @@
         android:layout_height="168dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="40dp"
-        android:background="@android:color/holo_purple"
+        android:background="@drawable/video4_image"
         android:onClick="PlayVideo"
         app:layout_constraintStart_toEndOf="@+id/video1_button"
         app:layout_constraintTop_toBottomOf="@+id/video1_button" />
@@ -104,16 +104,6 @@
         android:textColorLink="#FFFFFF"
         app:layout_constraintStart_toStartOf="@+id/video4_button"
         app:layout_constraintTop_toBottomOf="@+id/video4_button" />
-
-    <ImageView
-        android:id="@+id/back_button"
-        android:layout_width="92dp"
-        android:layout_height="47dp"
-        android:contentDescription="@string/back_button_image_description"
-        android:onClick="ReturnToPreviousScreen"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_arrow_back_circle" />
 
     <TextView
         android:id="@+id/video1_title"
@@ -163,9 +153,8 @@
 
     <ImageView
         android:id="@+id/video1_play_image"
-        android:layout_width="352dp"
-        android:layout_height="168dp"
-        android:background="#B2F43636"
+        android:layout_width="143dp"
+        android:layout_height="83dp"
         android:contentDescription="@string/play_button_image_description"
         android:elevation="2dp"
         app:layout_constraintBottom_toBottomOf="@+id/video1_button"
@@ -176,10 +165,9 @@
 
     <ImageView
         android:id="@+id/video2_play_image"
-        android:layout_width="352dp"
-        android:layout_height="168dp"
+        android:layout_width="143dp"
+        android:layout_height="83dp"
         android:layout_marginTop="8dp"
-        android:background="#8BC34A"
         android:contentDescription="@string/play_button_image_description"
         android:elevation="2dp"
         app:layout_constraintBottom_toBottomOf="@+id/video2_button"
@@ -190,10 +178,9 @@
 
     <ImageView
         android:id="@+id/video3_play_image"
-        android:layout_width="352dp"
-        android:layout_height="168dp"
+        android:layout_width="143dp"
+        android:layout_height="83dp"
         android:layout_marginTop="8dp"
-        android:background="#00CDD4"
         android:contentDescription="@string/play_button_image_description"
         android:elevation="2dp"
         app:layout_constraintBottom_toTopOf="@+id/video3_title"
@@ -204,11 +191,10 @@
 
     <ImageView
         android:id="@+id/video4_play_image"
-        android:layout_width="352dp"
-        android:layout_height="168dp"
+        android:layout_width="143dp"
+        android:layout_height="83dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:background="@android:color/holo_purple"
         android:contentDescription="@string/play_button_image_description"
         android:elevation="2dp"
         app:layout_constraintBottom_toTopOf="@+id/video4_title"

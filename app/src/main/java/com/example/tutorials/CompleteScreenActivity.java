@@ -25,23 +25,7 @@ public class CompleteScreenActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_complete_screen);
-
         Log.i(thisClass, "started ");
-
-//        //Add back button
-//        getSupportActionBar().setDisplayShowHomeEnabled(true);
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-        //load the all apps icon
-//        ImageView iv= findViewById(R.id.apps_image);
-//        //String path = "android.resource://" + getPackageName() + "/" + R.raw.apps;
-//        InputStream is = this.getResources().openRawResource(R.raw.apps);//new FileInputStream(path);
-//        Drawable icon = new BitmapDrawable(is);
-////        Log.i("Fnord", "width="+icon.getIntrinsicWidth()+
-////                " height="+icon.getIntrinsicHeight());
-//        iv.setImageDrawable(icon);
-
-
     }
 
     /** Called when the user taps the exit tutorial button */
@@ -54,9 +38,9 @@ public class CompleteScreenActivity extends AppCompatActivity
         VideoPlayerActivity.video2IsComplete = false;
         VideoPlayerActivity.video3IsComplete = false;
         VideoPlayerActivity.video4IsComplete = false;
-
         this.finish();
 
+        //Reset the main screen
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         intent.putExtra("EXIT", true);
@@ -75,17 +59,4 @@ public class CompleteScreenActivity extends AppCompatActivity
         Log.i(thisClass, "back button pressed. Now closing");
         this.finish();
     }
-
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item)//previous screen button substitute function
-//    {
-//        int id = item.getItemId();
-//
-//        if(id == android.R.id.home)
-//        {
-//            this.finish();
-//        }
-//
-//        return super.onOptionsItemSelected(item);
-//    }
 }
